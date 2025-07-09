@@ -1,0 +1,200 @@
+@import 'variables';
+@import 'common';
+
+*:focus {
+  outline: 2px solid $primary-blue;
+  outline-offset: 2px;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+  background-color: $background-color;
+
+  @media (max-width: $mobile) {
+    padding: $spacing-md;
+  }
+}
+
+.login-form {
+  background: $white;
+  border: 1px solid #E3ECF5;
+  border-radius: 12px;
+  padding: 55px 70px;
+  width: 100%;
+  max-width: 850px;
+
+  @media (max-width: $mobile) {
+    padding: $spacing-lg;
+    max-width: none;
+  }
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: $spacing-xxl;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  
+  .logo-image {
+    width: 195px;
+    height: 39px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+}
+
+.form {
+  .form-row {
+    display: flex;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: $spacing-md;
+    }
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
+    label {
+      font-size: 16px;
+      color: #5F5F5F;
+      margin-bottom: 7px;
+      
+      .required {
+        color: $red;
+      }
+    }
+    
+    input {
+      height: 45px;
+      padding: 12px 16px;
+      border: 1px solid #D7DBDF;
+      border-radius: 4px;
+      font-size: $font-size-base;
+      font-weight: $font-weight-normal;
+      color: $text-color;
+      background-color: $white;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      
+      &:focus {
+        border-color: $primary-blue;
+        box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+        outline: 2px solid $primary-blue;
+        outline-offset: 2px;
+      }
+      
+      &::placeholder {
+        color: $text-muted;
+      }
+      
+      &.error {
+        border-color: $red;
+        
+        &:focus {
+          border-color: $red;
+          box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.error-message {
+  color: $red;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: $font-weight-normal;
+}
+
+.checkbox-section {
+  margin-top: 35px;
+  
+  .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+      accent-color: $primary-blue;
+
+      &:focus {
+        outline: 2px solid $primary-blue;
+        outline-offset: 2px;
+      }
+    }
+    
+    label {
+      font-size: $font-size-base;
+      font-weight: $font-weight-normal;
+      color: $text-light;
+      line-height: 1.5;
+      cursor: pointer;
+      margin-bottom: 0;
+      
+      .terms-link {
+        color: $primary-blue;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:focus {
+          outline: 2px solid $primary-blue;
+          outline-offset: 2px;
+        }
+      }
+    }
+  }
+}
+
+.button-section {
+  margin-top: 65px;
+  
+  .create-account-btn {
+    background-color: #0071BC;
+    color: $white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    
+    &:hover {
+      background-color: $primary-blue-dark;
+    }
+    
+    &:active {
+      transform: translateY(1px);
+    }
+    
+    &:focus {
+      outline: 2px solid $primary-blue;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.3);
+    }
+  }
+}
